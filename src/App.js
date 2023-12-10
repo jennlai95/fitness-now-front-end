@@ -10,11 +10,13 @@ import Profile from './pages/Profile';
 import Registration from './pages/Registration';
 import AdminPortal from './pages/AdminPortal';
 import AdminClasses from './pages/AdminClasses';
+import Navbar from './components/Navbar';
+import Header from './components/Header';
 
 function App() {
   return (
   <Header>
-    <NavBar>
+    <Navbar>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/classes" element={<Classes/>}/>
@@ -27,7 +29,7 @@ function App() {
         <Route path="/admin-classes" element={<AdminClasses/>}/>
         <Route path="/Classes" element={<Classes/>}/>
       </Routes>
-    </NavBar>
+    </Navbar>
   </Header>
   );
 }
