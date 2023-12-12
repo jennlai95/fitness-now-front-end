@@ -6,7 +6,7 @@ header{
   background-color:#2596be;
 }
 
-input[type="text"],input[type="password"], input[type="email"],input[type="username"],input[type="number"], 
+input[type="name"],input[type="text"],input[type="password"], input[type="email"],input[type="username"],input[type="number"], 
 textarea{
     @apply w-full border my-1 py-2 px-3 rounded-2xl;
 }
