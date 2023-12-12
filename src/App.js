@@ -1,5 +1,6 @@
 import logo from './logo.svg';
-import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import Classes from './pages/Classes';
@@ -10,14 +11,16 @@ import Profile from './pages/Profile';
 import Registration from './pages/Registration';
 import AdminPortal from './pages/AdminPortal';
 import AdminClasses from './pages/AdminClasses';
-import Navbar from './components/Navbar';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
-function App() {
-  return (
-  <Header>
-    <Navbar>
+export default class App extends React.Component {
+  render() {
+    return (
+      <BrowserRouter>
+     <Header>
       <Routes>
+  
         <Route path="/" element={<Home/>}/>
         <Route path="/classes" element={<Classes/>}/>
         <Route path="/booking" element={<Booking/>}/>
@@ -27,11 +30,15 @@ function App() {
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/admin-portal" element={<AdminPortal/>}/>
         <Route path="/admin-classes" element={<AdminClasses/>}/>
-        <Route path="/Classes" element={<Classes/>}/>
       </Routes>
-    </Navbar>
-  </Header>
+      </Header>
+
+      <Footer/>
+
+
+
+   </BrowserRouter>
+
   );
 }
-
-export default App;
+}
