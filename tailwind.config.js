@@ -8,10 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'background' : '#fff',
-        'blue' :'#2596be',
-        'grey' : 'd9d9d9',
-        'peach' : 'e9997f',
+        // 'blue' :'#2596be',
+        // 'grey' : 'd9d9d9',
+        // 'peach' : 'e9997f',
   
       }
 
@@ -19,6 +18,6 @@ module.exports = {
 
   },
   plugins: [
-    require('@tailwindcss/forms'),
+    // require('@tailwindcss/forms'),
   ],
 }
