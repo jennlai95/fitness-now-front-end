@@ -1,44 +1,33 @@
-import logo from './logo.svg';
+
 import React from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Home from './pages/Home';
-import Classes from './pages/Classes';
-import Booking from './pages/Booking';
-import Schedule from './pages/Schedule';
-import Login from './pages/Login';
-import Profile from './pages/Profile';
-import Registration from './pages/Registration';
-import AdminPortal from './pages/AdminPortal';
-import AdminClasses from './pages/AdminClasses';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Classes from './pages/ClassesPage';
+import Booking from './pages/BookingPage';
+import Schedule from './pages/SchedulePage';
+import Profile from './pages/ProfilePage';
+import Registration from './pages/RegistrationPage';
+import AdminPortal from './pages/AdminPage';
+import AdminClasses from './pages/AdminClassesPage';
+import Layout from './components/Layout';
+import LoginPage from './pages/LoginPage';
 
-export default class App extends React.Component {
-  render() {
+function App ()  {
     return (
-      <BrowserRouter>
-     <Header>
-      <Routes>
-  
-        <Route path="/" element={<Home/>}/>
-        <Route path="/classes" element={<Classes/>}/>
-        <Route path="/booking" element={<Booking/>}/>
-        <Route path="/schedule" element={<Schedule/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/registration" element={<Registration/>}/>
-        <Route path="/profile" element={<Profile/>}/>
-        <Route path="/admin-portal" element={<AdminPortal/>}/>
-        <Route path="/admin-classes" element={<AdminClasses/>}/>
+
+       <Routes>
+        <Route path="/" element={<Layout/>}>
+          <Route path="/classes" element={<Classes/>}/>
+          <Route path="/booking" element={<Booking/>}/>
+          <Route path="/schedule" element={<Schedule/>}/>
+          <Route index path="/login" element={<LoginPage/>}/>
+          <Route path="/registration" element={<Registration/>}/>
+          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/admin-portal" element={<AdminPortal/>}/>
+          <Route path="/admin-classes" element={<AdminClasses/>}/>
+        </Route>
       </Routes>
-      </Header>
-
-      <Footer/>
-
-
-
-   </BrowserRouter>
-
   );
 }
-}
+
+export default App;
