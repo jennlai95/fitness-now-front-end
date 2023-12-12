@@ -10,14 +10,15 @@ module.exports = {
       colors: {
         'background' : '#fff',
         'blue' :'#2596be',
-        'bg-2' : 'a8d0e6',
         'grey' : 'd9d9d9',
-        'peach' : 'e997f',
+        'peach' : 'e9997f',
   
       }
 
     },
 
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }

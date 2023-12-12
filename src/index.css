@@ -15,6 +15,6 @@ textarea{
 }
 
 button {
-    background-color:#2596be;
+    background-color: #e9997f;
     @apply p-2 w-full text-white rounded-2xl;
 }
