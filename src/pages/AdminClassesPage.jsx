@@ -1,8 +1,11 @@
 import React from "react";
+import Layout from '../components/Layout';
 
 function AdminClasses() {
     return(
-        <div>AdminClasses</div>
+        <div>AdminClasses
+            <Layout/>
+        </div>
     )
 }
 

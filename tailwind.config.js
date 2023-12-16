@@ -4,13 +4,16 @@ const { isLabelWithInternallyDisabledControl } = require('@testing-library/user-
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
+    "../components/**/*.{js,jsx,ts,tsx}",
+    "../pages/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        // 'blue' :'#2596be',
-        // 'grey' : 'd9d9d9',
-        // 'peach' : 'e9997f',
+      //  'blue' : ''
+      //   // 'blue' :'#2596be',
+      //   // 'grey' : 'd9d9d9',
+      //   // 'peach' : 'e9997f',
   
       }
 

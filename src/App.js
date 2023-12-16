@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { redirect } from 'react-router';
 import './App.css';
 import Classes from './pages/ClassesPage';
 import Booking from './pages/BookingPage';
@@ -11,12 +12,13 @@ import AdminPortal from './pages/AdminPage';
 import AdminClasses from './pages/AdminClassesPage';
 import Layout from './components/Layout';
 import LoginPage from './pages/LoginPage';
+import Home from './pages/HomePage';
 
 function App ()  {
     return (
-
-       <Routes>
-        <Route path="/" element={<Layout/>}>
+      <Routes>
+          <Route Component='home' element={<Home/>}/>
+          <Route path="/" element={<Home/>}/>                          
           <Route path="/classes" element={<Classes/>}/>
           <Route path="/booking" element={<Booking/>}/>
           <Route path="/schedule" element={<Schedule/>}/>
@@ -25,7 +27,7 @@ function App ()  {
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/admin-portal" element={<AdminPortal/>}/>
           <Route path="/admin-classes" element={<AdminClasses/>}/>
-        </Route>
+       
       </Routes>
   );
 }

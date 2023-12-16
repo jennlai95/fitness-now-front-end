@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import Layout from '../components/Layout';
 
 function Registration() {
 
@@ -24,6 +25,8 @@ function Registration() {
   }
 
   return (
+    <div>
+    <Layout/>
     <div className='mt-4 grow flex items-center justify-around'>
       <div className='mb-64'>
         <h1 className='text-4xl text-center'> Register Now </h1>
@@ -46,6 +49,7 @@ function Registration() {
             <Link to ={'/login'}> Login </Link>
           </div>
         </form>
+    </div>
     </div>
     </div>
   )

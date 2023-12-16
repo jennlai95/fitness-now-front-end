@@ -1,6 +1,7 @@
 import axios from 'axios';
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Layout from '../components/Layout';
 
 
 // login form 
@@ -25,6 +26,8 @@ export default function LoginPage ()  {
   }
 
   return (
+    <div>
+      <Layout/>
     <div className='mt-4 grow flex items-center justify-around'>
       <div className='mb-64'>
         <h1 className='text-4xl text-center'> Login  </h1>
@@ -48,6 +51,7 @@ export default function LoginPage ()  {
         </form>
     </div>
     </div>
+            </div>
   )
 };
 

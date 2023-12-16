@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Layout from '../components/Layout';
 
 function Profile() {
   return (
-    <div>Profile</div>
+    <div>
+      <Layout/>
+      Profile</div>
   )
 }
 
