@@ -2,6 +2,7 @@ import React from 'react'
 import pilates from "../assets/pilates.jpg"
 import { Link } from 'react-router-dom'
 import Layout from '../components/Layout'
+import Footer from '../components/Footer'
 
 function Home() {
   return (
@@ -20,6 +21,7 @@ function Home() {
           </div>
 
     </div>
+    <Footer/>
     </div>
 
 

@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { redirect } from 'react-router';
 import './App.css';
 import Classes from './pages/ClassesPage';
 import Booking from './pages/BookingPage';
@@ -9,9 +8,7 @@ import Schedule from './pages/SchedulePage';
 import Profile from './pages/ProfilePage';
 import Registration from './pages/RegistrationPage';
 import AdminPortal from './pages/AdminPage';
-import AdminClasses from './pages/AdminClassesPage';
-import Layout from './components/Layout';
-import LoginPage from './pages/LoginPage';
+import AdminClasses from './pages/AdminClassesPage';import LoginPage from './pages/LoginPage';
 import Home from './pages/HomePage';
 
 function App ()  {

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import pilates from '../assets/pilates.jpg'
 import  yoga from '../assets/yoga.jpg';
 import reformers from '../assets/reformers.jpg'
 import SignUp from '../components/signup';
 import Layout from '../components/Layout';
+import Footer from '../components/Footer';
 
 
 export default function Classes() {
@@ -18,7 +18,7 @@ export default function Classes() {
         <a class="absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300">
           <p  class="mx-auto">Join our mat pilates class. Suitable for beginners and intermediate</p>
           </a>
-        <a href="#" class="relative">
+        <a href="/" class="relative">
             <div class="flex flex-wrap content-center">
                 <img src={pilates} class="mx-auto  " alt="reformer"/>
             </div>
@@ -33,7 +33,7 @@ export default function Classes() {
         <a class="absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300">
           <p  class="mx-auto">Join our hot yoga class. Suitable for beginners and intermediates. Performed in hot conditions. Please discuss if you have any health issues before booking </p>
           </a>
-        <a href="#" class="relative">
+        <a href="/" class="relative">
             <div class="flex flex-wrap content-center">
                 <img src={yoga} class="mx-auto h-fit" alt="reformer"/>
             </div>
@@ -41,7 +41,8 @@ export default function Classes() {
         </div>
     </div>
 
-{/* column class 3 */}
+
+    {/* column 3 class 4  */}
 
 <div>
         <div class="relative text-center"> 
@@ -49,7 +50,7 @@ export default function Classes() {
         <a class="absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300">
           <p  class="mx-auto">Join our reformers pilates class. Suitable for beginners and intermediate with options to progress</p>
           </a>
-        <a href="#" class="relative">
+        <a href="/" class="relative">
             <div class="flex flex-wrap content-center">
                 <img src={reformers} class="mx-auto" alt="reformer"/>
             </div>
@@ -59,15 +60,10 @@ export default function Classes() {
  
     </div>
     <SignUp/>
+    <Footer/>
     </div>
 
   )
 }
 
 
-// <button> 
-// <Link to ={'/registration'}> Sign up now  </Link>
-// </button>
-// <div className='text-center text-black'> Already have an account?
-//   <Link to ={'/login'}> Login </Link>
-// </div>

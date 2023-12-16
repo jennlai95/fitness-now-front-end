@@ -1,5 +1,4 @@
 import React from 'react'
-import { DateRangePicker } from 'react-date-range';
 import Layout from '../components/Layout';
 
 function Schedule() {

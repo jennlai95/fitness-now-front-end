@@ -1,20 +1,20 @@
-// import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 
 
-// const Footer = () => {
-// 	return (
+const Footer = () => {
+	return (
 
 
-//             <footer className="text-center bg-background py-4">
+            <footer className="bg-sky-100 flex flex-col justify-center items-center">
         
-//             <div className="w-10 md:w-10">
-// 			<img className="logo" src={logo} alt=" Logo"></img>
+            <div className="w-10 md:w-10">
+			<img className="h-20 w-20" src={logo} alt=" Logo"></img>
 
-//             </div>
-//             </footer>
+            </div>
+            </footer>
 
 
-// 	);
-// };
+	);
+};
 
-// export default Footer;
+export default Footer;
