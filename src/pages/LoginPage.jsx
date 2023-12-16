@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
+import Footer from '../components/Footer';
 
 
 // login form 
@@ -51,6 +52,7 @@ export default function LoginPage ()  {
         </form>
     </div>
     </div>
+    <Footer/>
             </div>
   )
 };
