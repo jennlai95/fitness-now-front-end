@@ -1,3 +1,7 @@
+
+
+deployed server: https://fitness-studio-app-e1ebefd30762.herokuapp.com/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -75,3 +79,9 @@ npm install axios
 
 
 resources: 
+
+
+libraries: 
+
+
+

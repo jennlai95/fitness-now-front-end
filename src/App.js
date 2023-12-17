@@ -8,7 +8,8 @@ import Schedule from './pages/SchedulePage';
 import Profile from './pages/ProfilePage';
 import Registration from './pages/RegistrationPage';
 import AdminPortal from './pages/AdminPage';
-import AdminClasses from './pages/AdminClassesPage';import LoginPage from './pages/LoginPage';
+import AdminClasses from './pages/AdminClassesPage';
+import LoginPage from './pages/LoginPage';
 import Home from './pages/HomePage';
 
 function App ()  {
