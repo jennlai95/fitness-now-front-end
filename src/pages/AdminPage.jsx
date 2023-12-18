@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Layout from '../components/Layout';
 import axios from "axios";
-// import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
+import EditBooking from "../components/EditBooking";
 
 function AdminPortal() {
     // const { id } = useParams();
@@ -36,7 +36,7 @@ function AdminPortal() {
       <div>
         <Layout/>
         <h1 className='text-center bg-sky-100'>Profile Page </h1>
-        <div class="mt-8 grid gap-x-6 gap-y-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-3 h-screen"> 
+        <div class="mt-8 grid gap-x-6 gap-y-8 grid-cols-2 md:grid-cols-2 lg:grid-cols-2 h-screen"> 
         <div className='bg-blue-50'> User information 
           <p> Username : {profileData.username}</p>
           <p> Email : {profileData.email}</p>
@@ -44,7 +44,7 @@ function AdminPortal() {
         </div>
         <div className='bg-blue-50'> <h1 className='text-center'>Booking History</h1> 
         <p> placeholder </p>
-          <button> Edit Booking </button> </div>
+          <EditBooking/> </div>
         </div>
         <Footer/>
         </div> 
