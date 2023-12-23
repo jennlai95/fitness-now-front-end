@@ -1,6 +1,8 @@
 // import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
+
 
 const EditBooking = () => {
     const [title, setTitle] = useState('');
@@ -12,41 +14,10 @@ const EditBooking = () => {
     
     useEffect(() => {
      
-    //     axios.get(`${process.env.REACT_APP_BACKEND_API}/bookings/${id}`)
-    //     .then((response) => {
-    //         setTitle(response.data.description);
-    //         setTime(response.data.time);
-    //         setDate(response.data.date);
-         
-    //     })
-    //     .catch((error) => {
-    //         alert('An error occured, please try again');
-    //         console.log(error);
-    //     });
-    // }, [id])
-
-    // const handleEditBooking = () => {
-    //     const data = {
-    //       title,
-    //       time,
-    //       date,
-    //     };
-
-    //     axios
-    //       .put(`${process.env.REACT_APP_BACKEND_API}/bookings/${id}`, data)
-    //       .then(() => {
-    //         console.log('Booking edited successfully');
-    //       })
-    //       .catch((error) => {
-    //         console.log(error);
-    //       });
-    //   };
-
-
     const fetchData = async () => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_API}/bookings/${id}`);
-            if (!response.ok) {
+            const response = await axios.get(`${process.env.API_URL}/booking/`);
+            if (!response.status !== 200) {
                 throw new Error('Network response was not ok');
             }
 
@@ -71,15 +42,10 @@ const EditBooking = () => {
                 };
 
                 try {
-                    const response = await fetch(`${process.env.REACT_APP_BACKEND_API}/bookings/${id}`, {
-                        method: 'PUT',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(data),
-                    });
+                    const response = await axios.put(`${process.env.REACT_APP_API_URL}/booking/${id}`, data);
 
-                    if (!response.ok) {
+
+                    if (response.status !== 200) {
                         throw new Error('Network response was not ok');
                     }
 

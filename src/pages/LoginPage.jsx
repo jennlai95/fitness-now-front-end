@@ -15,14 +15,16 @@ export default function LoginPage ()  {
   async function handleLoginSubmit(ev) {
     ev.preventDefault();
     try {
-      await  axios.post('/login', {
-        email,
+      await  axios.post(`${process.env.API_URL}/users/login`, {
         username,
+        email,
         password,
       });
       alert('Login succesful')
     } catch (e) {
-      alert('Error, please try again')
+      console.error('Error:', e);
+      console.log('Request details:', e.config);
+      alert('Error, please try again');
     }
   }
 

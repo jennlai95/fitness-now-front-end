@@ -5,15 +5,13 @@ import Layout from '../components/Layout';
 
 function Registration() {
 
-  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
   async function registerUser(ev) {
     ev.preventDefault();
     try {
-      await  axios.post('/registration', {
-        name,
+      await  axios.post('/register', {
         email,
         username,
         password,
@@ -31,9 +29,6 @@ function Registration() {
       <div className='mb-64'>
         <h1 className='text-4xl text-center'> Register Now </h1>
         <form className='max-width-md mx-auto ' onSubmit={registerUser}>
-          <input type="name" placeholder='Your name' 
-            value={name} 
-            onChange={ev => setName(ev.target.value) }/>
           <input type="email" placeholder='your@email.com'
             value={email} 
             onChange={ev => setEmail(ev.target.value) }/>

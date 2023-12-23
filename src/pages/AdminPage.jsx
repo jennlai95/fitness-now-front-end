@@ -13,22 +13,35 @@ function AdminPortal() {
       email: "",
     }
     );
-  
-    const API_URL= 'https://fitness-studio-app-e1ebefd30762.herokuapp.com/'
+    
+    const [bookingData, setBookingData] = useState([]);
+
+    const API_URL= process.env.REACT_APP_API_URL;
   
     // fetch all user details 
     useEffect(() => {
-      const fetchData = async () => {
+      const fetchUserData = async () => {
         try {
-          const response = await axios.get(`${API_URL}/users`);
-          const data = response.data;
-          setProfileData(data); // Updates the user state with the fetched data.
-        } catch (error) {
-          console.error('Error fetching profile data:', error);
-        }
-      };
-      fetchData();
-    }, []);
+          const currentUserId = 'CURRENT_USER_ID';
+
+          const profileResponse = await axios.get(`${API_URL}/users/${currentUserId}`);
+          const profileData = profileResponse.data;
+          setProfileData(profileData); // Updates the user state with the fetched data.
+          console.log('Profile Data:', profileData);
+
+        // Fetch user booking data
+        const bookingResponse = await axios.get(`${API_URL}/booking/my-bookings`);
+        const bookingData = bookingResponse.data;
+        setBookingData(bookingData);
+        console.log('Booking Data:', bookingData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        
+      }
+    };
+
+    fetchUserData();
+  }, [API_URL]);
     
   
     // placeholder admin data 
@@ -43,7 +56,9 @@ function AdminPortal() {
           <button> Update/Delete User </button> 
         </div>
         <div className='bg-blue-50 p-4'> <h1 className='text-center'>Booking History</h1> 
-        <p> placeholder </p>
+        {bookingData.map((booking) => (
+            <p key={booking.id}>{/* Display booking information here */}</p>
+          ))}
           <EditBooking/> </div>
         </div>
         <Footer/>
