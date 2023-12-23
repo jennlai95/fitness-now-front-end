@@ -11,7 +11,7 @@ function Registration() {
   async function registerUser(ev) {
     ev.preventDefault();
     try {
-      await  axios.post('/register', {
+      await  axios.post(process.env.REACT_APP_API_URL + "/register", {
         email,
         username,
         password,

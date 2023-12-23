@@ -16,13 +16,11 @@ function Profile() {
   }
   );
 
-  const API_URL= 'https://fitness-studio-app-e1ebefd30762.herokuapp.com/'
-
   // fetch user details by username /id 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${API_URL}users/one/id/${id}`);
+        let response = await axios.get(process.env.REACT_APP_API_URL + "users/:id");
         const data = response.data;
         setProfileData(data); // Updates the user state with the fetched data.
       } catch (error) {

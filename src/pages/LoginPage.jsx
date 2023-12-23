@@ -15,11 +15,15 @@ export default function LoginPage ()  {
   async function handleLoginSubmit(ev) {
     ev.preventDefault();
     try {
-      await  axios.post(`${process.env.API_URL}/users/login`, {
+      let result =  axios.post(process.env.REACT_APP_API_URL + "users/login", {
         username,
         email,
         password,
       });
+
+      let data = await result.data;
+      console.log(data);
+
       alert('Login succesful')
     } catch (e) {
       console.error('Error:', e);
@@ -38,15 +42,15 @@ export default function LoginPage ()  {
           <input type="email" 
             placeholder='your@email.com'
             value={email}
-            onChange={ev => setEmail(ev.target.value)}/>
+            onChange={event => setEmail(event.target.value)}/>
           <input type="username" 
             placeholder='username'
             value={username}
-            onChange={ev => setUsername(ev.target.value)}/>
+            onChange={event => setUsername(event.target.value)}/>
           <input type="password" 
             placeholder="password"
             value={password}
-            onChange={ev => setPassword(ev.target.value)} />
+            onChange={event => setPassword(event.target.value)} />
           <button> Login</button>
           <div className='text-center text-gray-400'> 
             <Link to ={'/registration'}> Register Here </Link>

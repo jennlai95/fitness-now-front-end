@@ -16,7 +16,6 @@ function AdminPortal() {
     
     const [bookingData, setBookingData] = useState([]);
 
-    const API_URL= process.env.REACT_APP_API_URL;
   
     // fetch all user details 
     useEffect(() => {
@@ -24,13 +23,13 @@ function AdminPortal() {
         try {
           const currentUserId = 'CURRENT_USER_ID';
 
-          const profileResponse = await axios.get(`${API_URL}/users/${currentUserId}`);
+          const profileResponse = await axios.get(`${process.env.REACT_APP_API_URL}/users/${currentUserId}`);
           const profileData = profileResponse.data;
           setProfileData(profileData); // Updates the user state with the fetched data.
           console.log('Profile Data:', profileData);
 
         // Fetch user booking data
-        const bookingResponse = await axios.get(`${API_URL}/booking/my-bookings`);
+        const bookingResponse = await axios.get(`${process.env.REACT_APP_API_URL}/booking/my-bookings`);
         const bookingData = bookingResponse.data;
         setBookingData(bookingData);
         console.log('Booking Data:', bookingData);
@@ -41,7 +40,7 @@ function AdminPortal() {
     };
 
     fetchUserData();
-  }, [API_URL]);
+  }, []);
     
   
     // placeholder admin data 
