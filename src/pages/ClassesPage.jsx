@@ -1,5 +1,5 @@
 import React from 'react';
-import pilates from '../assets/pilates.jpg'
+import pilates from '../assets/pilates.jpg';
 import  yoga from '../assets/yoga.jpg';
 import reformers from '../assets/reformers.jpg'
 import SignUp from '../components/signup';
