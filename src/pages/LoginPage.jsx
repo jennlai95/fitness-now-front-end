@@ -11,16 +11,16 @@ export default function LoginPage ()  {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
-  async function handleLoginSubmit(ev) {
-    ev.preventDefault();
+  async function handleLoginSubmit(event) {
+    event.preventDefault();
     try {
-      let result =  axios.post(process.env.REACT_APP_API_URL + "users/login", {
+      let result = await axios.post(process.env.REACT_APP_API_URL + "users/login", {
         username,
         email,
         password,
       });
 
-      let data = await result.data;
+      let data =  result.data;
       console.log(data);
 
       alert('Login succesful')

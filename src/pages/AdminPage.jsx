@@ -3,9 +3,11 @@ import Layout from '../components/Layout';
 import axios from "axios";
 import Footer from "../components/Footer";
 import EditBooking from "../components/EditBooking";
+import { useNavigate, useParams } from "react-router-dom";
 
 function AdminPortal() {
-    // const { id } = useParams();
+    const { id } = useParams();
+    const navigate = useNavigate();
 
     // establish profile detail state 
     const [profileData, setProfileData ] = useState({
@@ -13,26 +15,27 @@ function AdminPortal() {
       email: "",
     }
     );
+
+     // Edit mode state
+  const [editMode, setEditMode] = useState(false);
     
-    const [bookingData, setBookingData] = useState([]);
+  const [bookingData, setBookingData] = useState([]);
 
   
     // fetch all user details 
     useEffect(() => {
       const fetchUserData = async () => {
         try {
-          const currentUserId = 'CURRENT_USER_ID';
 
-          const profileResponse = await axios.get(`${process.env.REACT_APP_API_URL}/users/${currentUserId}`);
-          const profileData = profileResponse.data;
-          setProfileData(profileData); // Updates the user state with the fetched data.
-          console.log('Profile Data:', profileData);
+          const userResponse = await axios.get(`${process.env.REACT_APP_API_URL}/users/${id}`);
+          const userData = userResponse.data;
+          setProfileData(userData);
 
-        // Fetch user booking data
-        const bookingResponse = await axios.get(`${process.env.REACT_APP_API_URL}/booking/my-bookings`);
-        const bookingData = bookingResponse.data;
-        setBookingData(bookingData);
-        console.log('Booking Data:', bookingData);
+          // Fetch all user booking data
+          const bookingResponse = await axios.get(`${process.env.REACT_APP_API_URL}/admin/all`);
+          const bookingData = bookingResponse.data.booking;
+          setBookingData(bookingData);
+          console.log('Booking Data:', bookingData);
       } catch (error) {
         console.error('Error fetching data:', error);
         
@@ -40,7 +43,36 @@ function AdminPortal() {
     };
 
     fetchUserData();
-  }, []);
+  }, [id]);
+
+  const handleEditProfile = async () => {
+    try {
+      // Perform the update request with the updated data
+      await axios.put(`${process.env.REACT_APP_API_URL}/users/${id}`, {
+        username: profileData.username,
+        email: profileData.email,
+      });
+      // Exit edit mode after successful update
+      setEditMode(false);
+    } catch (error) {
+      console.error('Error updating profile:', error);
+    }
+  };
+ 
+
+  const handleDeleteProfile = async () => {
+    try {
+      await axios.delete(`${process.env.REACT_APP_API_URL}/users/${id}`);
+      alert('User profile deleted successfully');
+      // Use navigate to go to some page after deletion
+      navigate('/');
+    } catch (error) {
+      console.error('Error deleting profile:', error);
+      alert('Error deleting profile. Please try again.');
+    }
+  };
+
+
     
   
     // placeholder admin data 
@@ -52,7 +84,15 @@ function AdminPortal() {
         <div className='bg-blue-50 p-4'> User information 
           <p> Username : {profileData.username}</p>
           <p> Email : {profileData.email}</p>
-          <button> Update/Delete User </button> 
+          {editMode ? (
+            <>
+              <button onClick={handleEditProfile}>Save Changes</button>
+              <button onClick={() => setEditMode(false)}>Cancel</button>
+            </>
+          ) : (
+            <button onClick={() => setEditMode(true)}>Edit Profile</button>
+          )}
+          <button onClick={handleDeleteProfile}>Delete User</button>
         </div>
         <div className='bg-blue-50 p-4'> <h1 className='text-center'>Booking History</h1> 
         {bookingData.map((booking) => (
