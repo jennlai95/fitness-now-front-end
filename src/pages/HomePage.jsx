@@ -17,7 +17,7 @@ function Home() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000, 
+    autoplaySpeed: 25000, 
   };
 
   return (
@@ -25,24 +25,30 @@ function Home() {
     <div className='min-h-screen'>
     <Layout/>
       <div className='flex flex-col'>
-     
-      <Slider {...sliderSettings}>
-      
-            <div>
-              <img src={reformers} alt='reformers' className='w-full h-auto' />
-            </div>
-            <div>
-              <img src={yoga} alt='yoga'className='w-full h-auto' />
-            </div>
-            <div> <img src={pilates} alt="Home Page" className="w-full-h-auto"/> </div>
-            </Slider>
+      <img src={yoga} alt='yoga'className='w-full h-auto' />
 
     <div> 
   
       <h1 className='relative text-center text-xl'> About Us </h1>
       <p className='relative text-center'> Welcome to Fitness Now. We welcome all fitness lovers from newbies to fitness enthusiasts</p>
     </div>
+     <div className='mt-8 mx-4 grid gap-4 grid-cols-1 h-auto'>
 
+      <Slider {...sliderSettings}>
+      
+            <div>
+              <img src={reformers} alt='reformers' className="w-500 h-500" />
+            </div>
+            <div>
+              <img src={yoga} alt='yoga'className="w-500 h-500" />
+            </div>
+            <div> <img src={pilates} alt="Home Page" className="w-500 h-500"/> </div>
+            </Slider>
+     </div>
+
+     <div className='mt-8 mx-4'>
+
+    
     <h2 className='relative text-center text-l'> Content Page</h2>
       <div className="mt-8 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-auto relative text-center">
 
@@ -72,6 +78,7 @@ function Home() {
                     Sign up
                   </Link>
                 </div>
+      </div>
       </div>
     <button> <Link to='/login' className='hover:underline'> Login </Link></button>
           
