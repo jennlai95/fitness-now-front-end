@@ -24,12 +24,21 @@ export default function LoginPage ()  {
       console.log(data);
 
       alert('Login succesful')
+
+      // add redirect to login page if successful
+
+      history.push(`/profile/${data.id}`);
+
+      // catch error
     } catch (e) {
       console.error('Error:', e);
       console.log('Request details:', e.config);
       alert('Error, please try again');
     }
   }
+
+
+// styling
 
   return (
     <div>
@@ -54,7 +63,7 @@ export default function LoginPage ()  {
           <div className='text-center text-gray-400'> 
             <Link to ={'/registration'}> Register Here </Link>
           </div>
-        </form>
+        </form> 
     </div>
     </div>
     <Footer/>
