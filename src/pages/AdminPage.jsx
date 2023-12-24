@@ -27,12 +27,12 @@ function AdminPortal() {
       const fetchUserData = async () => {
         try {
 
-          const userResponse = await axios.get(`${process.env.REACT_APP_API_URL}/users/${id}`);
+          const userResponse = await axios.get(`https://fitness-studio-app-e1ebefd30762.herokuapp.com//users/${id}`);
           const userData = userResponse.data;
           setProfileData(userData);
 
           // Fetch all user booking data
-          const bookingResponse = await axios.get(`${process.env.REACT_APP_API_URL}/admin/all`);
+          const bookingResponse = await axios.get(`https://fitness-studio-app-e1ebefd30762.herokuapp.com/admin/all`);
           const bookingData = bookingResponse.data.booking;
           setBookingData(bookingData);
           console.log('Booking Data:', bookingData);

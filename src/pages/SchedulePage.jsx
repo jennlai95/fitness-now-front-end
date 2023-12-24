@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Layout from '../components/Layout';
 import pilates from '../assets/pilates.jpg'
+import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 
 function Schedule() {
   // State to store the schedule data
@@ -28,7 +30,7 @@ function Schedule() {
     <div> 
        <Layout/>
      <div className='mt-8 flex flex-col items-center space-y-8'>
-            <div className='text-xl font-bold'>About the classes</div>
+            <div className='text-xl font-bold'> Available classes</div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {scheduleData.map((schedule) => (
                 <div key={schedule._id} className='bg-white p-4 rounded-md shadow-md'>
@@ -37,11 +39,17 @@ function Schedule() {
                   <p className='text-sm text-gray-500'>Class: {schedule._name}</p>
                     <p className='text-sm text-gray-500'>Date: {new Date(schedule.date).toLocaleDateString()}</p>
                     <p className='text-sm text-gray-500'>Time: {schedule.time.start} - {schedule.time.end}</p>
+                    <Link to ={'/booking'}> 
+                    <button className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
+                    Book Now
+                    </button>
+                     </Link>
                   </div>
                 </div>
               ))}
             </div>
           </div>
+          <Footer/>
         </div>
       );
     }
