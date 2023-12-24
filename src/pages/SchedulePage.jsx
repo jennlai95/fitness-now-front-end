@@ -3,10 +3,14 @@ import Layout from '../components/Layout';
 import pilates from '../assets/pilates.jpg'
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
+import DatePicker from 'react-datepicker';
+
 
 function Schedule() {
   // State to store the schedule data
   const [scheduleData, setScheduleData] = useState([]);
+  const [selectedDate, setSelectedDate] = useState(null);
+  
 
   // Fetch schedule data from the backend when the component mounts
   useEffect(() => {
@@ -31,6 +35,16 @@ function Schedule() {
        <Layout/>
      <div className='mt-8 flex flex-col items-center space-y-8'>
             <div className='text-xl font-bold'> Available classes</div>
+                <div className='mb-4 grid grid-cols-1'>
+                <label className='block mb-2'>Select Date:</label>
+                <DatePicker
+                  selected={selectedDate}
+                  onChange={(date) => setSelectedDate(date)}
+                  className='border rounded p-2 w-full'
+                  dateFormat="dd/MM/yyyy"
+                />
+              </div>
+              
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {scheduleData.map((schedule) => (
                 <div key={schedule._id} className='bg-white p-4 rounded-md shadow-md'>
