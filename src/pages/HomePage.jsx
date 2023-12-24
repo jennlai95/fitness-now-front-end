@@ -50,7 +50,7 @@ function Home() {
 
     
     <h2 className='relative text-center text-l'> Content Page</h2>
-      <div className="mt-8 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-auto relative text-center">
+      <div className="mt-8 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-auto relative text-center pb-16">
 
                 <div className='my-2 bg-blue-200 p-4 rounded-lg hover:underline'>
                   
@@ -78,9 +78,14 @@ function Home() {
                     Sign up
                   </Link>
                 </div>
+                <div className='my-2 bg-blue-200 p-4 rounded-lg hover:underline'>
+                  <Link to='/login'>
+                    Login
+                  </Link>
+                </div>
       </div>
       </div>
-    <button> <Link to='/login' className='hover:underline'> Login </Link></button>
+   
           
     <Footer/>
     </div>

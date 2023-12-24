@@ -7,10 +7,10 @@ const Footer = () => {
 
         <div> 
 
-            <footer className="bg-sky-100 flex flex-col bottom-0 z-50 ">
+            <footer className="bg-sky-100 flex flex-col fixed bottom-0 left-0 right-0 z-10">
         
-            <div className="w-full md:w-10 flex justify-between items-center . bottom-0">
-			<img className="h-20 w-20" src={logo} alt=" Logo"></img>
+            <div className="w-full md:w-10 flex justify-between items-center">
+			<img className="h-10 w-10" src={logo} alt=" Logo"></img>
             <Link to={"/admin-portal"} class="hover:bg-sky-200 text-xs"> Admin Only </Link>
             </div>
             </footer>
