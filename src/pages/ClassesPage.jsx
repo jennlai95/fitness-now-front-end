@@ -11,9 +11,9 @@ export default function Classes() {
   return (
 <div> 
 <Layout/>
-<div class="mt-8 grid gap-x-6 gap-y-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-3 h-screen"> 
+<div className="mt-8 grid gap-x-6 gap-y-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-3 h-screen"> 
     <div>
-        <div class="relative text-center"> 
+        <div className="relative text-center"> 
           <h1  className='tracking-wider' > Pilates </h1>
         <a href = "/#" class="absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300">
           <p  class="mx-auto">Join our mat pilates class. Suitable for beginners and intermediate</p>

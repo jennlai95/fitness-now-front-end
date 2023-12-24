@@ -78,6 +78,8 @@ notes:
 npm install axios
 npm i notistack
 npm install --save-dev jest
+npm install react-slick slick-carousel
+
 
 
 
