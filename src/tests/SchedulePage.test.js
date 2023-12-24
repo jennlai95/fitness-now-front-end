@@ -11,5 +11,8 @@ describe('Schedule Component', () => {
       <Schedule />
         </BrowserRouter>
       );
+// check if component renders 
+      expect(screen.getByText('Available classes')).toBeInTheDocument();
+      expect(screen.getByLabelText('Select Date:')).toBeInTheDocument();
     });
 });
