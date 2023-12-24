@@ -77,6 +77,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 notes: 
 npm install axios
 npm i notistack
+npm install --save-dev jest
+
 
 
 

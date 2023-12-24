@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "t3a2-fitness-now-front-end",
   "version": "0.1.0",
   "private": true,
@@ -23,7 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!axios)/'",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -46,6 +47,7 @@
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
+    "jest": "^27.5.1",
     "tailwindcss": "^3.3.6"
   }
 }

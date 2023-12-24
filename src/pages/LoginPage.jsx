@@ -1,9 +1,8 @@
-import axios from 'axios';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import Footer from '../components/Footer';
-
+import axios from 'axios';
 
 // login form 
 export default function LoginPage ()  {
