@@ -23,7 +23,7 @@ function Profile() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let response = await axios.get(process.env.REACT_APP_API_URL + "users/${id}");
+        let response = await axios.get(`${process.env.REACT_APP_API_URL}users/${id}`);
         const data = response.data;
         setProfileData(data); // Updates the user state with the fetched data.
       } catch (error) {

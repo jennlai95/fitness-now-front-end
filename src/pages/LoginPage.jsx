@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate,  } from 'react-router-dom';
 import Layout from '../components/Layout';
 import Footer from '../components/Footer';
 import axios from 'axios';
@@ -7,7 +7,7 @@ import axios from 'axios';
 // login form 
 export default function LoginPage ()  {
 
-  
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
@@ -27,7 +27,7 @@ export default function LoginPage ()  {
 
       // add redirect to login page if successful
 
-      history.push(`/profile/${data.id}`);
+      navigate.push(`/profile/${data.id}`);
 
       // catch error
     } catch (e) {
